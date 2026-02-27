@@ -18,7 +18,14 @@ int main(void){
 	int count = 0;   // actual number of results
 	
 	//todo: convert the list comprehension
-	
+	for (int i; i<=10; i++) {
+		int number = numbers[i];
+		if (number % 2 == 0) {
+			squares[count] = number * number;
+			count += 1;
+		}
+	}
+
 	//print results
 	for(int i=0; i < count; i++){
 	    printf("%d ", squares[i]);
