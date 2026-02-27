@@ -6,10 +6,10 @@
 
 int main( void ) {
 
-    int length = 1;
-    char str[500] = {'H','e','l','l','o'};
+    int length = 0;
+    char str[500] = {'H','e','l','l','o','T','h','e','r','e'};
 
-    for (char *ch; *ch != '\0'; ++ch)  {
+    for (char *ch = str; *ch != '\0'; ++ch)  {
         length += 1;
     }
     

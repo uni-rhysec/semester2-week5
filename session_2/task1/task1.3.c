@@ -9,14 +9,14 @@ int main(void){
  * until a 0 (zero) is entered. Print the sum at the end.
  */
 
-int input;
+int in;
 int sum = 0;
 
  do {
     printf("Enter number to add:\n");
-    scanf("%d",input);
-    sum += input;
- } while (input != 0);
-    printf("%d",sum);
+    scanf("%d",&in);
+    sum += in;
+ } while (in != 0);
+    printf("%d\n",sum);
     return 0;
 }

@@ -1,6 +1,7 @@
 //Week 5, Session 2
 
 # include <stdio.h>
+# include <string.h>
 
 int main(void){
 /* Task 1.2b
@@ -14,6 +15,10 @@ int main(void){
  */
 	char choice;
 	// complete the rest of the code here
+	do {
+		printf("Enter 'q' to quit: ");
+		scanf("%s",&choice);
+	} while (choice != 'q');
 	
     return 0;
 }
