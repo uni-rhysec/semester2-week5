@@ -19,9 +19,10 @@ int calculate_fine(int excess_speed, int fine) {
 
 
 
-int get_speed_limit(int speed_limit) {
+int get_speed_limit() {
   // Get user input for speed limit
-  int input;
+  char input[50];
+  int speed_limit = 0;
   printf("Enter the speed limit: ");
   if (fgets(input, sizeof(input), stdin)) {
     sscanf(input, "%d", &speed_limit);
@@ -32,9 +33,10 @@ int get_speed_limit(int speed_limit) {
 
 
 
-int get_driver_speed(int driver_speed) {
+int get_driver_speed() {
   // Get user input for driver's speed
-  int input;
+  char input[50];
+  int driver_speed = 0;
   printf("Enter the driver's speed: ");
   if (fgets(input, sizeof(input), stdin)) {
     sscanf(input, "%d", &driver_speed);
@@ -44,18 +46,13 @@ int get_driver_speed(int driver_speed) {
 }
 
 
-
-
-
-
-
 int main() {
   int speed_limit, driver_speed, fine = 0;
   char input[20];
 
-  speed_limit = get_speed_limit(speed_limit);
+  speed_limit = get_speed_limit();
 
-  driver_speed = get_driver_speed(driver_speed);
+  driver_speed = get_driver_speed();
 
   // Determine if the driver is speeding
   if (driver_speed > speed_limit) {

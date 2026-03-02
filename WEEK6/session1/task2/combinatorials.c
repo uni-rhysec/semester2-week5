@@ -16,6 +16,37 @@ int factorial(int n) {
   return n * factorial(n - 1);
 }
 
+int validate_input(int argc, char **argv) {
+
+//printf("%d\n%c\n%c\n%c\n",argc,*argv[1],*argv[2],*argv[3]);
+
+  // Validate format
+  if (argc != 4 || (*argv[2] != 'C' && *argv[2] != 'P')) {
+    printf("Usage: ./combinatorials n C r or n P r\n");
+    return 0;
+  }
+
+  // Validate values
+  if (*argv[1] < 0 || *argv[3] < 0 || *argv[1] < *argv[3]) {
+    printf("Combinatorial not defined.\n");
+    return 0;
+  } 
+
+  return 1;
+}
+
+int calculate_combinations(n,r) {
+  int result;
+  result = factorial(n) / (factorial(r) * factorial(n-r));
+  return result;
+}
+
+int calculate_permutations(n,r) {
+  int result;
+  result = factorial(n) / factorial(n-r);
+  return result;
+}
+
 int main(int argc, char **argv) {
   /*
   The program should accept a command line argument as follows:
@@ -41,11 +72,15 @@ int main(int argc, char **argv) {
 
   */
 
-  if (argc != 3 || (argv[1] != 'C' || argv[1] != 'P')) {
-    printf("Usage: ./combinatorials n C r or n P r\n");
+  if (validate_input(argc, argv)) {
+
+    if (*argv[2] == 'C') {
+      printf("%d combinations\n",calculate_combinations(*argv[1],*argv[3]));
+    }
+    if (*argv[2] == 'P') {
+      printf("%d permutations\n", calculate_permutations(*argv[1],*argv[3]));
+    }
+
   }
-
-
-
 
 }
