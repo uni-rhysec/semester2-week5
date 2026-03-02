@@ -35,13 +35,13 @@ int validate_input(int argc, char **argv) {
   return 1;
 }
 
-int calculate_combinations(n,r) {
+int calculate_combinations(int n, int r) {
   int result;
   result = factorial(n) / (factorial(r) * factorial(n-r));
   return result;
 }
 
-int calculate_permutations(n,r) {
+int calculate_permutations(int n,int r) {
   int result;
   result = factorial(n) / factorial(n-r);
   return result;
@@ -74,11 +74,14 @@ int main(int argc, char **argv) {
 
   if (validate_input(argc, argv)) {
 
+    int n = atoi(argv[1]);
+    int r = atoi(argv[3]);
+
     if (*argv[2] == 'C') {
-      printf("%d combinations\n",calculate_combinations(*argv[1],*argv[3]));
+      printf("%d combinations\n",calculate_combinations(n,r));
     }
     if (*argv[2] == 'P') {
-      printf("%d permutations\n", calculate_permutations(*argv[1],*argv[3]));
+      printf("%d permutations\n", calculate_permutations(n,r));
     }
 
   }
