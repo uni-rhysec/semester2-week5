@@ -29,7 +29,7 @@ int main(void){
 
 		// convert letter to number if required
 
-		int multiplier = 0;
+		long multiplier = 0;
 
 		switch (ch) {
 			case 65:
@@ -64,7 +64,7 @@ int main(void){
 		// index is the power of 16
 		int index = strlen(hex) - 1 - letter;
 
-		// printf("mult %d\n",multiplier);
+		// printf("mult %ld\n",multiplier);
 		
 		// calculate 16^index
 		for (int power = 0; power < index; power++) {
@@ -76,7 +76,7 @@ int main(void){
 
 		// printf("ch %c\n",ch);
 		// printf("index %d\n",index);
-		// printf("mult %d\n",multiplier);
+		// printf("mult %ld\n",multiplier);
 		// printf("decimal %ld\n\n",decimal);
 	}
 
